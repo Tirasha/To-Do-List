@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My To-Do List</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main-container">
+    <div class="top-bar">
+      <div class="left-bar">
+        <div class="app-logo">
+          <img src="Images/logo.png" alt="app logo" />
+        </div>
+        <p class="app-title">My To-Do List</p>
+      </div>
+      <div class="right-bar">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search tasks..."
+          />
+        </div>
+        <div class="mode-icon" id="modeToggle">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+        <div class="avatar">
+          <img src="Images/Avatar.png" alt="user avatar" />
+        </div>
+      </div>
+    </div>
+
+    <div class="top-content">
+      <div class="top-left-content">
+        <p>My To-Do List</p>
+        <button class="add-task-btn" id="openModal">+ Add New Task</button>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+      </div>
+
+      <div class="top-right-content">
+        <p>Hello, Nadeesha!</p>
+        <div class="sort-dropdown">
+          <select id="sortSelect">
+            <option value="" disabled selected hidden>Sort by</option>
+            <option value="date">Due Date</option>
+            <option value="priority">Priority</option>
+          </select>
+          <button class="clear-btn" id="clearCompleted">
+            Clear All Completed
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="to-do-content" id="taskList"></div>
+
+    <div class="footer">
+      <p>&copy; 2025 TaskMate Inc. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <p class="modal-title">Add To-Do List</p>
+      <label for="taskName">Task Name</label>
+      <input type="text" id="taskName" />
+
+      <label for="dueDate">Due Date</label>
+      <input type="date" id="dueDate" />
+
+      <label for="priority">Priority</label>
+      <select id="priority">
+        <option value="" disabled selected>Select priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+      <button id="addTaskBtn">Add Task</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
